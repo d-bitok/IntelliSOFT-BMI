@@ -1,1 +1,1 @@
-# IntelliSOFT-BMI
+# intelliSOFT
