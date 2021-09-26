@@ -9,11 +9,14 @@ import { COLORS } from '../../constants';
 const Report = ({ route, navigation }) => {
     
     const {
-        firstName,
-        lastName,
-        date,
-        month,
-        year,
+        Date,
+        Month,
+        Year,
+        Height,
+        Weight,
+        BMI,
+        // Health,
+        Comment,
     } = route.params;
 
     return (
@@ -32,27 +35,36 @@ const Report = ({ route, navigation }) => {
             }}
         >
             <Text>
-                Home Page
+                Home Page :
+                {Date}
             </Text> 
             <Text>
                 FirstName :
-                 {firstName}
+                 {Month}
             </Text>
             <Text>
                 LastName :
-                 {lastName}
+                 {Year}
             </Text>
             <Text>
                 dateDOB :
-                 {date}
+                 {Height}
             </Text>
             <Text>
                 monthDOB :
-                 {month}
+                 {Weight}
             </Text>
             <Text>
                 yearDOB :
-                 {year}
+                 {BMI}
+            </Text>
+            {/* <Text>
+                monthDOB :
+                 {Health}
+            </Text> */}
+            <Text>
+                yearDOB :
+                 {Comment}
             </Text>
         <TouchableOpacity style={{
             backgroundColor: COLORS.black,
