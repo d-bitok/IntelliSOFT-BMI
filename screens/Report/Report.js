@@ -4,104 +4,249 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
+
 import { COLORS, FONTS, SIZES } from '../../constants';
 import { styles } from '../../styles';
 
 const Report = ({ route, navigation }) => {
     
     const {
-        f_name,
-        l_name,
-        date_DOB,
-        month_DOB,
-        year_DOB,
+        FirstName,
+        LastName,
+        DateDOB,
+        MonthDOB,
+        YearDOB,
         Date,
         Month,
         Year,
         Height,
         Weight,
         BMI,
-        // Health,
         Comment,
     } = route.params;
 
-    let FirstName = f_name;
-    let LastName = l_name;
-    let DateDOB = date_DOB;
-    let MonthDOB = month_DOB;
-    let YearDOB = year_DOB;
+    function renderHeader() {
+        return (
+            <View style={{
+                justifyContent: 'center',
+            }}>
+                <View style={{
+                    top: 50,
+                    paddingLeft: SIZES.padding * 2,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}>
+                    <View style={{
+                        // top: 10,
+                        backgroundColor: COLORS.lightGray3,
+                        borderRadius: 16,
+                        height: 50,
+                        paddingHorizontal: SIZES.padding,
+                        ...styles.shadows,
+                        alignItems: 'flex-end',
+                        justifyContent: 'center'
+                    }}>
+                        <Text style={{
+                            ...FONTS.h1,
+                        }}>
+                            Patient Report
+                        </Text>
+                    </View>
+                </View>
+                <TouchableOpacity style={{
+                    backgroundColor: COLORS.blue,
+                    height: 36,
+                    borderRadius: 16,
+                    margin: 10,
+                    width: 64,
+                    ...styles.shadows,
+                    alignItems: 'flex-start'
+                }}
+                    onPress={() => {navigation.goBack()}}
+                >
+                    <Text style={{
+                        ...FONTS.h2,
+                        color: COLORS.white,
+                        top: -7,
+                        padding: SIZES.padding / 2
+                    }}>Back</Text>
+                </TouchableOpacity>
+            </View>
+        )
+    }
+
+    function renderDataPopulation() {
+        return (
+            <View
+                style={{
+                    flex: 1,
+                    // alignItems: 'center',
+                    // justifyContent: 'center'
+                }}
+            >
+                <View style={{
+                    margin: 10,
+                    ...styles.shadows,
+                    alignItems: 'flex-end'
+                }}
+                >
+                    <Text style={{
+                        ...FONTS.h2,
+                        color: COLORS.black,
+                        top: -7,
+                        padding: SIZES.padding / 2
+                    }}>Date : {Date} / {Month} / {Year}</Text>
+                </View>
+                <View style={{
+                    flexDirection: 'row',
+                    backgroundColor: COLORS.green
+                }}>
+                    <View style={{
+                        margin: 10,
+                        ...styles.shadows,
+                        alignItems: 'flex-start'
+                    }}
+                    >
+                        <Text style={{
+                            ...FONTS.h2,
+                            color: COLORS.white,
+                            paddingHorizontal: SIZES.padding / 2
+                        }}>Full Names</Text>
+                    </View>
+                    <View style={{
+                        margin: 10,
+                        ...styles.shadows,
+                        alignItems: 'center'
+                    }}
+                    >
+                        <Text style={{
+                            ...FONTS.h2,
+                            color: COLORS.white,
+                            paddingHorizontal: SIZES.padding / 2
+                        }}>Age</Text>
+                    </View>
+                    <View style={{
+                        margin: 10,
+                        ...styles.shadows,
+                        alignItems: 'flex-end'
+                    }}
+                    >
+                        <Text style={{
+                            ...FONTS.h2,
+                            color: COLORS.white,
+                            paddingHorizontal: SIZES.padding / 2
+                        }}>BMI Status</Text>
+                    </View>
+                </View>
+                    
+                <View style={{
+                    flexDirection: 'row',
+                    backgroundColor: COLORS.lightGreen
+                }}>
+                    <View style={{
+                        margin: 10,
+                        ...styles.shadows,
+                        alignItems: 'flex-start'
+                    }}
+                    >
+                        <Text style={{
+                            ...FONTS.h2,
+                            color: COLORS.black,
+                            padding: SIZES.padding / 2
+                        }}>{FirstName} {LastName}</Text>
+                    </View>
+                    <View style={{
+                        margin: 10,
+                        ...styles.shadows,
+                        alignItems: 'center'
+                    }}
+                    >
+                        <Text style={{
+                            ...FONTS.h2,
+                            color: COLORS.black,
+                            padding: SIZES.padding / 2
+                        }}>{Date}</Text>
+                    </View>
+                    <View style={{
+                        margin: 10,
+                        ...styles.shadows,
+                        alignItems: 'flex-end'
+                    }}
+                    >
+                        <Text style={{
+                            ...FONTS.h2,
+                            color: COLORS.black,
+                            padding: SIZES.padding / 2
+                        }}>{BMI}</Text>
+                    </View>
+                </View>
+                <TouchableOpacity style={{
+                    backgroundColor: COLORS.blue,
+                    height: 36,
+                    borderRadius: 16,
+                    margin: 10,
+                    ...styles.shadows,
+                    alignItems: 'center'
+                }}
+                    onPress={() => {navigation.navigate('Home')}}
+                >
+                    <Text style={{
+                        ...FONTS.h2,
+                        color: COLORS.white,
+                        top: -7,
+                        padding: SIZES.padding / 2
+                    }}>Home</Text>
+                </TouchableOpacity>
+
+                    <Text>
+                        Report Page
+                    </Text> 
+                    <Text>
+                        Date :
+                        {Date} / {Month} / {Year}
+                    </Text>
+                    <Text>
+                        Height :
+                        {Height}
+                    </Text>
+                    <Text>
+                        Weight :
+                        {Weight}
+                    </Text>
+                    <Text>
+                        BMI :
+                        {BMI}
+                    </Text>
+                    <Text>
+                        Comments :
+                        {Comment}
+                    </Text>
+                    <Text>
+                        First Name :
+                            {FirstName}
+                    </Text>
+                    <Text>
+                        Last Name :
+                            {LastName}
+                    </Text>
+                    <Text>
+                        DOB :
+                            {DateDOB} /
+                            {MonthDOB} /
+                            {YearDOB}
+                    </Text>
+            </View>
+        )
+    }
 
     return (
         <View
             style={{
                 flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
             }}
         >
-        <View
-            style={{
-                flex: 1,
-                alignItems: 'center',
-                justifyContent: 'center'
-            }}
-        >
-            <Text>
-                Home Page
-            </Text> 
-            <Text>
-                DOB :
-                 {DateDOB} {MonthDOB} {YearDOB}
-            </Text>
-            <Text>
-                FirstName :
-                 {FirstName}
-            </Text>
-            <Text>
-                LastName :
-                 {LastName}
-            </Text>
-            <Text>
-                Date :
-                {Date} {Month} {Year}
-            </Text>
-            <Text>
-                Height :
-                 {Height}
-            </Text>
-            <Text>
-                Weight :
-                 {Weight}
-            </Text>
-            <Text>
-                BMI :
-                 {BMI}
-            </Text>
-            {/* <Text>
-                monthDOB :
-                 {Health}
-            </Text> */}
-            <Text>
-                Comments :
-                 {Comment}
-            </Text>
-        <TouchableOpacity style={{
-            backgroundColor: COLORS.blue,
-            height: 36,
-            borderRadius: 16,
-            margin: 10,
-            ...styles.shadows
-        }}
-            onPress={() => {navigation.navigate('Home')}}
-        >
-            <Text style={{
-                ...FONTS.h2,
-                color: COLORS.white,
-                top: -7,
-                padding: SIZES.padding / 2
-            }}>Home</Text>
-        </TouchableOpacity>
-        </View>
+            {renderHeader()}
+            {renderDataPopulation()}
         </View>
     )
 }

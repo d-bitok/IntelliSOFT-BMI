@@ -15,7 +15,15 @@ import {
 import { COLORS, FONTS, SIZES, icons } from '../../constants';
 import { styles } from '../../styles';
 
-const BMI = ({ navigation }) => {
+const BMI = ({ navigation, route }) => {
+
+    const  {
+        FirstName,
+        LastName,
+        DateDOB,
+        MonthDOB,
+        YearDOB,
+    } = route.params;
 
     const [formModalVisible, setFormModalVisible] = useState(false);
     const [reportModalVisible, setReportModalVisible] = useState(false);
@@ -1001,17 +1009,27 @@ const BMI = ({ navigation }) => {
                                                         marginHorizontal: SIZES.padding,
                                                         ...styles.shadows
                                                     }}
-                                                    onPress={() => {navigation.navigate('Report',
-                                                    {
-                                                        Date : date,
-                                                        Month : month,
-                                                        Year : year,
-                                                        Height : height,
-                                                        Weight : weight,
-                                                        BMI : getBMI(parseInt(height), parseInt(weight)),
-                                                        Comment : comments, 
+                                                    onPress={
+                                                        () => {
+                                                            navigation.navigate(
+                                                                'Report',
+                                                                {
+                                                                    Date : date,
+                                                                    Month : month,
+                                                                    Year : year,
+                                                                    Height : height,
+                                                                    Weight : weight,
+                                                                    BMI : getBMI(parseInt(height), parseInt(weight).toFixed(2)),
+                                                                    Comment : comments, 
+                                                                    FirstName,
+                                                                    LastName,
+                                                                    DateDOB,
+                                                                    MonthDOB,
+                                                                    YearDOB,
+                                                                }
+                                                            )
+                                                        }
                                                     }
-                                                    )}}
                                                     >
                                                         <Text style={{
                                                             color: COLORS.white,

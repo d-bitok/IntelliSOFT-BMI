@@ -15,6 +15,7 @@ import {
 import { styles } from '../../styles'
 
 const Register = ({ navigation, route }) => {
+    
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [date, setDate] = useState('');
@@ -197,7 +198,7 @@ const Register = ({ navigation, route }) => {
                                 style={{
                                     backgroundColor: COLORS.white,
                                     height: 36,
-                                    width: 50,
+                                    width: 60,
                                     borderWidth: .2,
                                     borderColor: COLORS.black,
                                     borderRadius: 12,
@@ -244,7 +245,7 @@ const Register = ({ navigation, route }) => {
                         marginHorizontal: SIZES.padding,
                         ...styles.shadows
                     }}
-                    onPress={() => navigation.navigate('Report'
+                    onPress={() => navigation.navigate('Login'
                     , {
                         f_name : firstName,
                         l_name : lastName,
