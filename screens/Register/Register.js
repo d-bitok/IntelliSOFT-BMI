@@ -246,11 +246,11 @@ const Register = ({ navigation, route }) => {
                     }}
                     onPress={() => navigation.navigate('Report'
                     , {
-                        firstName,
-                        lastName,
-                        date,
-                        month,
-                        year,
+                        f_name : firstName,
+                        l_name : lastName,
+                        date_DOB : date,
+                        month_DOB : month,
+                        year_DOB : year,
                     }
                     )}
                     >

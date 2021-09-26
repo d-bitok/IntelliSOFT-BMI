@@ -4,11 +4,17 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
-import { COLORS } from '../../constants';
+import { COLORS, FONTS, SIZES } from '../../constants';
+import { styles } from '../../styles';
 
 const Report = ({ route, navigation }) => {
     
     const {
+        f_name,
+        l_name,
+        date_DOB,
+        month_DOB,
+        year_DOB,
         Date,
         Month,
         Year,
@@ -18,6 +24,12 @@ const Report = ({ route, navigation }) => {
         // Health,
         Comment,
     } = route.params;
+
+    let FirstName = f_name;
+    let LastName = l_name;
+    let DateDOB = date_DOB;
+    let MonthDOB = month_DOB;
+    let YearDOB = year_DOB;
 
     return (
         <View
@@ -35,27 +47,34 @@ const Report = ({ route, navigation }) => {
             }}
         >
             <Text>
-                Home Page :
-                {Date}
+                Home Page
             </Text> 
             <Text>
+                DOB :
+                 {DateDOB} {MonthDOB} {YearDOB}
+            </Text>
+            <Text>
                 FirstName :
-                 {Month}
+                 {FirstName}
             </Text>
             <Text>
                 LastName :
-                 {Year}
+                 {LastName}
             </Text>
             <Text>
-                dateDOB :
+                Date :
+                {Date} {Month} {Year}
+            </Text>
+            <Text>
+                Height :
                  {Height}
             </Text>
             <Text>
-                monthDOB :
+                Weight :
                  {Weight}
             </Text>
             <Text>
-                yearDOB :
+                BMI :
                  {BMI}
             </Text>
             {/* <Text>
@@ -63,16 +82,24 @@ const Report = ({ route, navigation }) => {
                  {Health}
             </Text> */}
             <Text>
-                yearDOB :
+                Comments :
                  {Comment}
             </Text>
         <TouchableOpacity style={{
-            backgroundColor: COLORS.black,
-            height: 25
+            backgroundColor: COLORS.blue,
+            height: 36,
+            borderRadius: 16,
+            margin: 10,
+            ...styles.shadows
         }}
             onPress={() => {navigation.navigate('Home')}}
         >
-            <Text>Home</Text>
+            <Text style={{
+                ...FONTS.h2,
+                color: COLORS.white,
+                top: -7,
+                padding: SIZES.padding / 2
+            }}>Home</Text>
         </TouchableOpacity>
         </View>
         </View>

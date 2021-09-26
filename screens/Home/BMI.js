@@ -218,7 +218,7 @@ const BMI = ({ navigation }) => {
                                 style={{
                                     backgroundColor: COLORS.white,
                                     height: 36,
-                                    width: 50,
+                                    width: 60,
                                     borderWidth: .2,
                                     borderColor: COLORS.black,
                                     borderRadius: 12,
@@ -469,7 +469,7 @@ const BMI = ({ navigation }) => {
                                                             style={{
                                                                 backgroundColor: COLORS.white,
                                                                 height: 36,
-                                                                width: 50,
+                                                                width: 60,
                                                                 borderWidth: .2,
                                                                 borderColor: COLORS.black,
                                                                 borderRadius: 12,
@@ -713,7 +713,7 @@ const BMI = ({ navigation }) => {
                                                             style={{
                                                                 backgroundColor: COLORS.white,
                                                                 height: 36,
-                                                                width: 50,
+                                                                width: 60,
                                                                 borderWidth: .2,
                                                                 borderColor: COLORS.black,
                                                                 borderRadius: 12,
@@ -966,14 +966,10 @@ const BMI = ({ navigation }) => {
                                                     <Text>Comment : {comments}</Text>
                                                 </View>
                                                 <View style={{
-                                                    // flex: 1,
                                                     flexDirection: 'row',
-                                                    // alignItems: 'flex-end',
-                                                    // bottom: -300
                                                 }}>
                                                     <TouchableOpacity style={{
                                                         borderRadius: 16,
-                                                        // padding: 10,
                                                         justifyContent: 'center',
                                                         alignItems: 'center',
                                                         elevation: 2,
@@ -995,7 +991,6 @@ const BMI = ({ navigation }) => {
                                                     </TouchableOpacity>
                                                     <TouchableOpacity style={{
                                                         borderRadius: 16,
-                                                        // padding: 10,
                                                         justifyContent: 'center',
                                                         alignItems: 'center',
                                                         elevation: 2,
