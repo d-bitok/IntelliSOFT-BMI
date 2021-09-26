@@ -1,15 +1,21 @@
 import React from 'react';
 import {
     View,
-    Text
+    Text,
+    TouchableOpacity
 } from 'react-native';
+import { COLORS } from '../../constants';
 
-import { connect } from 'react-redux';
+const Report = ({ route, navigation }) => {
+    
+    const {
+        firstName,
+        lastName,
+        date,
+        month,
+        year,
+    } = route.params;
 
-import { HeaderBar } from '../../components'
-import appTheme from '../../constants/theme';
-
-const Report = ({ appTheme }) => {
     return (
         <View
             style={{
@@ -18,23 +24,47 @@ const Report = ({ appTheme }) => {
                 justifyContent: 'center'
             }}
         >
-            <Text>Report</Text>
+        <View
+            style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}
+        >
+            <Text>
+                Home Page
+            </Text> 
+            <Text>
+                FirstName :
+                 {firstName}
+            </Text>
+            <Text>
+                LastName :
+                 {lastName}
+            </Text>
+            <Text>
+                dateDOB :
+                 {date}
+            </Text>
+            <Text>
+                monthDOB :
+                 {month}
+            </Text>
+            <Text>
+                yearDOB :
+                 {year}
+            </Text>
+        <TouchableOpacity style={{
+            backgroundColor: COLORS.black,
+            height: 25
+        }}
+            onPress={() => {navigation.navigate('Home')}}
+        >
+            <Text>Home</Text>
+        </TouchableOpacity>
+        </View>
         </View>
     )
 }
-function mapStateToProps(state) {
-    return {
-        appTheme: state.appTheme,
-        error: state.error
-    }
-}
 
-function mapDispatchToProps(dispatch) {
-    return {
-        toggleTheme: (themeType) => {
-            return dispatch(toggleTheme(themeType))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps) (Report);
+export default Report;

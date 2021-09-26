@@ -33,7 +33,7 @@ export default function Tabs () {
                     const tintColor = focused ? COLORS.black1 : null
 
                     switch (route.name) {
-                        case 'Home':
+                        case 'HomePage':
                             
                             return (
                                 <View>
@@ -90,7 +90,7 @@ export default function Tabs () {
                 }
             })}
         >
-            <Tab.Screen name='Home' component={Home} />
+            <Tab.Screen name='HomePage' component={Home} />
             <Tab.Screen name='BMI' component={BMI} />
             <Tab.Screen name='Profile' component={Profile} />
         </Tab.Navigator>

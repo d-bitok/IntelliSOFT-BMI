@@ -244,14 +244,14 @@ const Register = ({ navigation, route }) => {
                         marginHorizontal: SIZES.padding,
                         ...styles.shadows
                     }}
-                    onPress={() => navigation.navigate('Profile'
-                    // , {
-                    //     firstName,
-                    //     lastName,
-                    //     date,
-                    //     month,
-                    //     year,
-                    // }
+                    onPress={() => navigation.navigate('Report'
+                    , {
+                        firstName,
+                        lastName,
+                        date,
+                        month,
+                        year,
+                    }
                     )}
                     >
                         <Text style={{

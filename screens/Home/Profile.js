@@ -58,7 +58,7 @@ const Profile = ({ route, navigation }) => {
             backgroundColor: COLORS.black,
             height: 25
         }}
-            onPress={() => {navigation.navigate('Home')}}
+            onPress={() => {navigation.navigate('BMI')}}
         >
             <Text>Home</Text>
         </TouchableOpacity>

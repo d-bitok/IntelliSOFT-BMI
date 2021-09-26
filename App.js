@@ -3,7 +3,8 @@ import {
   Home,
   Profile,
   BMI,
-  Register
+  Register,
+  Report
 } from './screens';
 
 import { createStackNavigator } from '@react-navigation/stack';
@@ -58,6 +59,7 @@ export default function App() {
         initialRouteName={'Register'}
         >
           <Stack.Screen name='Register' component={Register} />
+          <Stack.Screen name='Report' component={Report} />
           <Stack.Screen name='Home' component={Tabs} />
           <Stack.Screen name='BMI' component={BMI} />
           <Stack.Screen name='Profile' component={Profile} />
