@@ -25,6 +25,22 @@ const Report = ({ route, navigation }) => {
         Comment,
     } = route.params;
 
+
+    function getAge(x, y) {
+        return y - x;
+    }
+
+    function getBMIStatus(x) {
+        if (x > -1 && x < 19) {
+            return 'Underweight'
+        } else if (x > 18 && x < 26) {
+            return 'Normal'
+        } else if (x > 24) {
+            return 'Overweight'
+        }
+        return 'Invalid Value'
+    }
+
     function renderHeader() {
         return (
             <View style={{
@@ -165,7 +181,7 @@ const Report = ({ route, navigation }) => {
                             ...FONTS.h2,
                             color: COLORS.black,
                             padding: SIZES.padding / 2
-                        }}>{Date}</Text>
+                        }}>{getAge(YearDOB, Year)}</Text>
                     </View>
                     <View style={{
                         margin: 10,
@@ -177,7 +193,7 @@ const Report = ({ route, navigation }) => {
                             ...FONTS.h2,
                             color: COLORS.black,
                             padding: SIZES.padding / 2
-                        }}>{BMI}</Text>
+                        }}>{getBMIStatus(parseInt(BMI))}</Text>
                     </View>
                 </View>
                 <TouchableOpacity style={{
