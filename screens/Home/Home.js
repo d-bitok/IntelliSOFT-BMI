@@ -6,6 +6,13 @@ import {
 // import Tabs from './navigation/tabs'
 
 const Home = ({ route }) => {
+  const [data, setData] = React.useState(null);
+  React.useEffect(() => {
+    fetch("/api")
+    .then((res) => res.json())
+    .then((data) => setData(data.message));
+  }, []);
+  
     // const {
     //     firstName,
     //     lastName,
@@ -22,29 +29,30 @@ const Home = ({ route }) => {
                 justifyContent: 'center'
             }}
         >
+            {/* <Text> */}
+                {/* Home Page */}
+            {/* </Text>  */}
             <Text>
-                Home Page
-            </Text> 
-            <Text>
-                FirstName :
+                {/* FirstName : */}
                  {/* {firstName} */}
+                 {!data ? "API Loading ..." : data }
             </Text>
-            <Text>
-                LastName :
+            {/* <Text> */}
+                {/* LastName : */}
                  {/* {lastName} */}
-            </Text>
-            <Text>
-                dateDOB :
+            {/* </Text> */}
+            {/* <Text> */}
+                {/* dateDOB : */}
                  {/* {date} */}
-            </Text>
-            <Text>
-                monthDOB :
+            {/* </Text> */}
+            {/* <Text> */}
+                {/* monthDOB : */}
                  {/* {month} */}
-            </Text>
-            <Text>
-                yearDOB :
+            {/* </Text> */}
+            {/* <Text> */}
+                {/* yearDOB : */}
                  {/* {year} */}
-            </Text>
+            {/* </Text> */}
         </View>
     )
 }

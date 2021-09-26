@@ -31,6 +31,19 @@ const Report = ({ route, navigation }) => {
     }
 
     function getBMIStatus(x) {
+        // /**
+        //  * @param {any} input 
+        //  * @param {number} decimals 
+
+        //  * var toFixed = function(input, decimals) {
+        //  * var arr = ("" + input).split(".");
+        //  * if (arr.length === 1) return input;
+        //  * var int = arr[0],
+        //  *     max = arr[1].length,
+        //  *     dec = arr[1].substr(0, decimals > max ? max : decimals);
+        //  * return decimals === 0 ? int : [int, "." , dec].join("");
+        //  * } 
+        //  */
         if (x > -1 && x < 19) {
             return 'Underweight'
         } else if (x > 18 && x < 26) {
@@ -193,7 +206,7 @@ const Report = ({ route, navigation }) => {
                             ...FONTS.h2,
                             color: COLORS.black,
                             padding: SIZES.padding / 2
-                        }}>{getBMIStatus(parseInt(BMI))}</Text>
+                        }}>{getBMIStatus(BMI.toFixed(1))}</Text>
                     </View>
                 </View>
                 <TouchableOpacity style={{
@@ -214,38 +227,86 @@ const Report = ({ route, navigation }) => {
                     }}>Home</Text>
                 </TouchableOpacity>
 
-                    <Text>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         Report Page
                     </Text> 
-                    <Text>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         Date :
                         {Date} / {Month} / {Year}
                     </Text>
-                    <Text>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         Height :
                         {Height}
                     </Text>
-                    <Text>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         Weight :
                         {Weight}
                     </Text>
-                    <Text>
+                    <View style={{
+                        flexDirection: 'row'
+                    }}>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         BMI :
-                        {BMI}
                     </Text>
-                    <Text>
+                    <Text style={{
+                        // ...FONTS.SFh4,
+                        fontSize: 24,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
+                        {BMI.toFixed(1)}
+                    </Text>
+
+                    </View>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         Comments :
                         {Comment}
                     </Text>
-                    <Text>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         First Name :
                             {FirstName}
                     </Text>
-                    <Text>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         Last Name :
                             {LastName}
                     </Text>
-                    <Text>
+                    <Text style={{
+                        ...FONTS.h2,
+                        marginLeft: 20,
+                        marginTop: 5,
+                    }}>
                         DOB :
                             {DateDOB} /
                             {MonthDOB} /
