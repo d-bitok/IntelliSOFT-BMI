@@ -7,6 +7,7 @@ import theme, {
     selectedTheme,
 } from './theme'
 import icons from './icons'
+import images from './images'
 import constants from './constants'
 
 export {
@@ -18,5 +19,6 @@ export {
     lightTheme,
     selectedTheme,
     icons,
+    images,
     constants
 }
