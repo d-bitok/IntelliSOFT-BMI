@@ -97,6 +97,13 @@ Using these technologies :
 Using :
 
 - MongoDB with Mongoose
+![mongodb-1](https://user-images.githubusercontent.com/17353534/134965392-36f86862-dfd6-46da-a76f-8925eb56316d.jpg)
+Using Atlas to Monitor and general database overview
+- [Data _ Atlas_ MongoDB Atlas.pdf](https://github.com/rexdougie/IntelliSOFT-BMI/files/7238502/Data._.Atlas_.MongoDB.Atlas.pdf)
+- [Data _ Atlas_ MongoDB Atlas 2.pdf](https://github.com/rexdougie/IntelliSOFT-BMI/files/7238505/Data._.Atlas_.MongoDB.Atlas.2.pdf)
+
+- Postman to send GET and POST requests and connection
+[New Request - My Workspace.pdf](https://github.com/rexdougie/IntelliSOFT-BMI/files/7238494/New.Request.-.My.Workspace.pdf)
 
 ## Concepts
 
