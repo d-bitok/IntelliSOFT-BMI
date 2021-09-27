@@ -1,5 +1,9 @@
 ## IntelliSOFT BMI Frontend
 
+
+https://user-images.githubusercontent.com/17353534/134967363-d8a39bae-36f5-4d31-91b7-9662b0e839e8.MP4
+
+
 Using:
 
 - React Native
