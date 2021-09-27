@@ -53,7 +53,6 @@ On Registration Page Form Details :
         return Form-B
       }
 
-
 ![form-B](https://user-images.githubusercontent.com/17353534/134855744-b2c89243-8d84-4c51-9cb1-98d261a24ae6.jpg)
 
 # Patient Report Modal Popup On Save Form A/B
@@ -68,7 +67,6 @@ Details including :
 # Calculated Age ;
 
       DOB subtracted from the Date entered
-
 
 # Determined BMI Status ;
 
@@ -85,8 +83,27 @@ Details including :
 
 # Extra Details From The Registration Page
 
-All to be routed to the backend API and stored in the MongoDB database
+# IntelliSOFT-API-Backend
 
-- Link to the IntelliSOFT-BMI backend git repository.
-  https://github.com/rexdougie/intelliSOFT.git
-- Link to the Database will be shared privately.
+## REST API
+
+Using these technologies :
+
+- Node.js
+- Express for the Middleware
+- Typescript
+
+## NoSQL Database
+
+Using :
+
+- MongoDB with Mongoose
+
+## Concepts
+
+### The REST API Principals :
+
+- CRUD user sessions
+- HTTP methods (Request, Response ... ) Express.js
+
+### JWT and Refresh Tokens
