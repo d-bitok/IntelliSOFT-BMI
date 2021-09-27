@@ -9,6 +9,19 @@ import { COLORS, FONTS, SIZES } from '../../constants';
 import { styles } from '../../styles';
 
 const Login = ({ route, navigation }) => {
+
+    const [registrationData, setRegistrationData] = React.useState([]);
+
+    React.useEffect(() => {
+        // fetch("http://localhost:4000/dbIntelliSOFT/")
+    //     .then(res => res.json())
+    //     .then(res => {
+    //         if (res && !registrationData.length) {
+    //             setRegistrationData(res);
+    //         }
+    //     });
+    //     // props
+    }, []);
     
     const {
         f_name,

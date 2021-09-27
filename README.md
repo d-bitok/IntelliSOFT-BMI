@@ -91,7 +91,6 @@ Using these technologies :
 
 - Node.js
 - Express for the Middleware
-- Typescript
 
 ## NoSQL Database
 
@@ -103,7 +102,6 @@ Using :
 
 ### The REST API Principals :
 
-- CRUD user sessions
 - HTTP methods (Request, Response ... ) Express.js
 
 ### JWT and Refresh Tokens
