@@ -1,12 +1,20 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const PORT = 4000;
 
-app.get("/", function(req, res)  {
-  res.send('Hello from the server!');
+app.use(cors());
+app.use(bodyParser.json());
+
+mongoose.connect("mongodb+srv://dbIntelliSOFT:6us!7zggWkKQ*Pf@cluster0.bchie.mongodb.net/IntelliSOFT-API?retryWrites=true&w=majority", { useNewUrlParser: true });
+const connection = mongoose.connection;
+
+connection.once("open", function() {
+  console.log("MongoDB database connection established successfully");
 });
 
-// const PORT = process.env.PORT || 3001;
-const PORT = 3001;
 app.listen(PORT, function() {
-  console.log(`Server listening on ${PORT}`);
+  console.log("Server is running on Port: " + PORT);
 });
