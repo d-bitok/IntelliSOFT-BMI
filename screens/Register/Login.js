@@ -12,6 +12,7 @@ const Login = ({ route, navigation }) => {
 
     const [registrationData, setRegistrationData] = React.useState([]);
 
+    // Api Connection
     React.useEffect(() => {
         // fetch("http://localhost:4000/dbIntelliSOFT/")
     //     .then(res => res.json())
@@ -47,8 +48,8 @@ const Login = ({ route, navigation }) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
+                    {/* Header Title */}
                     <View style={{
-                        // top: 10,
                         backgroundColor: COLORS.lightGray3,
                         borderRadius: 16,
                         height: 50,
@@ -64,6 +65,7 @@ const Login = ({ route, navigation }) => {
                         </Text>
                     </View>
                 </View>
+                {/* Back Navigation */}
                 <TouchableOpacity style={{
                     backgroundColor: COLORS.blue,
                     height: 36,
@@ -96,6 +98,7 @@ const Login = ({ route, navigation }) => {
                     ...styles.shadows,
                     alignItems: 'flex-end'
                 }}>
+                    {/* DOB */}
                     <Text style={{
                         ...FONTS.h2,
                         color: COLORS.black,
@@ -103,6 +106,7 @@ const Login = ({ route, navigation }) => {
                         padding: SIZES.padding / 2
                     }}>DOB : {DateDOB} / {MonthDOB} / {YearDOB}</Text>
                 </View>
+                {/* Names */}
                 <View style={{
                     flexDirection: 'row',
                     backgroundColor: COLORS.green
@@ -161,6 +165,7 @@ const Login = ({ route, navigation }) => {
                             }}>{LastName}</Text>
                         </View>
                     </View>
+                    {/* BMI Navigation Button */}
                     <TouchableOpacity style={{
                         backgroundColor: COLORS.blue,
                         height: 36,
@@ -199,76 +204,6 @@ const Login = ({ route, navigation }) => {
             {renderHeader()}
             {renderDataPopulation()}
         </View>
-        // <View
-        //     style={{
-        //         flex: 1,
-        //         alignItems: 'center',
-        //         justifyContent: 'center'
-        //     }}
-        // >
-        // <View
-        //     style={{
-        //         flex: 1,
-        //         alignItems: 'center',
-        //         justifyContent: 'center'
-        //     }}
-        // >
-        // <TouchableOpacity style={{
-        //     backgroundColor: COLORS.blue,
-        //     height: 36,
-        //     borderRadius: 16,
-        //     margin: 10,
-        //     ...styles.shadows
-        // }}
-        //     onPress={() => {navigation.goBack()}}
-        // >
-        //     <Text style={{
-        //         ...FONTS.h2,
-        //         color: COLORS.white,
-        //         top: -7,
-        //         padding: SIZES.padding / 2
-        //     }}>Back</Text>
-        // </TouchableOpacity>
-        //     <Text>
-        //         Home Page
-        //     </Text> 
-        //     <Text>
-        //         DOB :
-        //          {DateDOB} {MonthDOB} {YearDOB}
-        //     </Text>
-        //     <Text>
-        //         FirstName :
-        //          {FirstName}
-        //     </Text>
-        //     <Text>
-        //         LastName :
-        //          {LastName}
-        //     </Text>
-        // <TouchableOpacity style={{
-        //     backgroundColor: COLORS.blue,
-        //     height: 36,
-        //     borderRadius: 16,
-        //     margin: 10,
-        //     ...styles.shadows
-        // }}
-        //     onPress={() => {navigation.navigate('BMI',
-        //     {
-        //         FirstName,
-        //         LastName,
-        //         DateDOB,
-        //         MonthDOB,
-        //         YearDOB,
-        //     })}}
-        // >
-        //     <Text style={{
-        //         ...FONTS.h2,
-        //         color: COLORS.white,
-        //         top: -7,
-        //         padding: SIZES.padding / 2
-        //     }}>Check BMI</Text>
-        // </TouchableOpacity>
-        // </View>
-        // </View>
     )
 }
 

@@ -25,10 +25,13 @@ const Report = ({ route, navigation }) => {
         Comment,
     } = route.params;
 
+    // Age Calculation
 
     function getAge(x, y) {
         return y - x;
     }
+
+    // Determining The BMI Status Using BMI
 
     function getBMIStatus(x) {
         // /**
@@ -66,7 +69,6 @@ const Report = ({ route, navigation }) => {
                     alignItems: 'center',
                 }}>
                     <View style={{
-                        // top: 10,
                         backgroundColor: COLORS.lightGray3,
                         borderRadius: 16,
                         height: 50,
@@ -109,10 +111,9 @@ const Report = ({ route, navigation }) => {
             <View
                 style={{
                     flex: 1,
-                    // alignItems: 'center',
-                    // justifyContent: 'center'
                 }}
             >
+                {/* Date */}
                 <View style={{
                     margin: 10,
                     ...styles.shadows,
@@ -130,6 +131,7 @@ const Report = ({ route, navigation }) => {
                     flexDirection: 'row',
                     backgroundColor: COLORS.green
                 }}>
+                    {/* Names */}
                     <View style={{
                         margin: 10,
                         ...styles.shadows,
@@ -142,6 +144,7 @@ const Report = ({ route, navigation }) => {
                             paddingHorizontal: SIZES.padding / 2
                         }}>Full Names</Text>
                     </View>
+                    {/* Age */}
                     <View style={{
                         margin: 10,
                         ...styles.shadows,
@@ -154,6 +157,7 @@ const Report = ({ route, navigation }) => {
                             paddingHorizontal: SIZES.padding / 2
                         }}>Age</Text>
                     </View>
+                    {/* BMI Status */}
                     <View style={{
                         margin: 10,
                         ...styles.shadows,
@@ -167,6 +171,8 @@ const Report = ({ route, navigation }) => {
                         }}>BMI Status</Text>
                     </View>
                 </View>
+
+                {/* Data Output Corresponding to Table Header */}
                     
                 <View style={{
                     flexDirection: 'row',
@@ -202,6 +208,7 @@ const Report = ({ route, navigation }) => {
                         alignItems: 'flex-end'
                     }}
                     >
+                        {/* Round Off BMI to One Decimal Place */}
                         <Text style={{
                             ...FONTS.h2,
                             color: COLORS.black,
@@ -209,6 +216,7 @@ const Report = ({ route, navigation }) => {
                         }}>{getBMIStatus(BMI.toFixed(1))}</Text>
                     </View>
                 </View>
+                {/* Navigate To Home Page */}
                 <TouchableOpacity style={{
                     backgroundColor: COLORS.blue,
                     height: 36,
@@ -227,6 +235,7 @@ const Report = ({ route, navigation }) => {
                     }}>Home</Text>
                 </TouchableOpacity>
 
+                    {/* Extra Info to be sent to the Database */}
                     <Text style={{
                         ...FONTS.h2,
                         marginLeft: 20,
@@ -269,7 +278,6 @@ const Report = ({ route, navigation }) => {
                         BMI :
                     </Text>
                     <Text style={{
-                        // ...FONTS.SFh4,
                         fontSize: 24,
                         marginLeft: 20,
                         marginTop: 5,

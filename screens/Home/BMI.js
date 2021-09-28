@@ -110,20 +110,26 @@ const BMI = ({ navigation, route }) => {
         const [dietRadioButtons, setDietRadioButtons] = useState(dietData);
         const [drugsRadioButtons, setDrugsRadioButtons] = useState(drugsData);
 
+        // Health State Radio buttons
         const onPressHealthRadioButtons = healthRadioButtonsArray => {
             console.log(healthRadioButtonsArray);
             setHealthRadioButtons(healthRadioButtonsArray);
         };
+
+        // Whether on diet or not Radio Buttons
 
         const onPressDietRadioButtons = dietRadioButtonsArray => {
             console.log(dietRadioButtonsArray);
             setDietRadioButtons(dietRadioButtonsArray);
         };
 
+        // Whether on any prescription Radio Buttons
         const onPressDrugsRadioButtons = drugsRadioButtonsArray => {
             console.log(drugsRadioButtonsArray);
             setDrugsRadioButtons(drugsRadioButtonsArray);
         };
+
+        // BMI Calculation
 
         function getBMI(x,y){
             return ((y / (x * x)) * 10000) || 0;
@@ -132,19 +138,16 @@ const BMI = ({ navigation, route }) => {
         return (
             <View style={{
                 flex: 1,
-                // paddingTop: SIZES.padding * 1.5,
-                // height: 390,
                 backgroundColor: COLORS.white,
                 alignItems: 'cemter',
                 justifyContent: 'center'
             }}>
             <View style={{
-                // flex: 1,
-                // top: -10,
                 backgroundColor: COLORS.transparent,
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>
+                {/* Background Image */}
                 <ImageBackground
                     source={icons.bmi}
                     resizeMode='contain'
@@ -162,6 +165,7 @@ const BMI = ({ navigation, route }) => {
                         paddingLeft: SIZES.padding * 1.2,
                         paddingTop: SIZES.padding * 2
                     }}>
+                        {/* Current Date Data Form */}
                         <View style={{
                             width: 100,
                             alignItems: 'center',
@@ -236,6 +240,7 @@ const BMI = ({ navigation, route }) => {
                             </View>
                         </View>
                     </View>
+                    {/* Height Info */}
                     <View style={{
                         flexDirection: 'row',
                         paddingLeft: SIZES.padding * 1.2,
@@ -272,6 +277,7 @@ const BMI = ({ navigation, route }) => {
                             }}/>
                         </View>
                     </View>
+                    {/* Weight Info */}
                     <View style={{
                         flexDirection: 'row',
                         paddingLeft: SIZES.padding * 1.2,
@@ -308,6 +314,7 @@ const BMI = ({ navigation, route }) => {
                             }}/>
                         </View>
                     </View>
+                    {/* Calculated BMI OutPut Rounded Off to Two Decimal Places */}
                     <View style={{
                         flexDirection: 'row',
                         paddingLeft: SIZES.padding * 1.2,
@@ -340,6 +347,7 @@ const BMI = ({ navigation, route }) => {
                         </View>
                     </View>
                 </View>
+                {/* Form A, Form B & Form C Modal */}
                 <View style={{
                     flex: 1,
                     justifyContent: 'center',
@@ -413,6 +421,7 @@ const BMI = ({ navigation, route }) => {
                                                 <View style={{
                                                     flexDirection: 'row',
                                                 }}>
+                                                    {/* Date Autopopulated From Previous Entry */}
                                                     <View style={{
                                                         width: 100,
                                                         alignItems: 'center',
@@ -545,11 +554,9 @@ const BMI = ({ navigation, route }) => {
                                                     style={{
                                                         backgroundColor: COLORS.white,
                                                         width: 280,
-                                                        // height: '60%',
                                                         borderWidth: .2,
                                                         borderColor: COLORS.black,
                                                         borderRadius: 12,
-                                                        // marginLeft: 10,
                                                         padding: 10,
                                                     }}/>
                                                 </View>
@@ -642,7 +649,6 @@ const BMI = ({ navigation, route }) => {
                                             <Text style={{
                                                 ...FONTS.h3,
                                                 color: COLORS.black,
-                                                // padding: SIZES.padding / 3,
                                             }}>
                                                 (Overweight)
                                             </Text>
@@ -788,11 +794,9 @@ const BMI = ({ navigation, route }) => {
                                                     style={{
                                                         backgroundColor: COLORS.white,
                                                         width: 280,
-                                                        // height: '60%',
                                                         borderWidth: .2,
                                                         borderColor: COLORS.black,
                                                         borderRadius: 12,
-                                                        // marginLeft: 10,
                                                         padding: 10,
                                                     }}/>
                                                 </View>
@@ -926,14 +930,12 @@ const BMI = ({ navigation, route }) => {
                                                 <View style={{
                                                     paddingHorizontal: SIZES.padding * 2.5,
                                                     marginTop: 1,
-                                                    // paddingVertical: SIZES.padding,
                                                     alignItems: 'center',
                                                     width: 300,
                                                     ...styles.shadowy
                                                 }}>
                                                     <Text style={{
                                                         ...FONTS.h1,
-                                                        // fontSize: 24,
                                                         color: COLORS.black,
                                                     }}>
                                                         Patient Report
@@ -942,36 +944,30 @@ const BMI = ({ navigation, route }) => {
                                                 <View style={{
                                                     padding: SIZES.padding
                                                 }}>
-                                                    {/* <TouchableOpacity style={{
-                                                        borderRadius: 16,
-                                                        padding: 10,
-                                                        elevation: 2,
-                                                        alignItems: 'center',
-                                                        backgroundColor: COLORS.green,
-                                                        height: 50,                            
-                                                        width: 150,
-                                                        paddingHorizontal: SIZES.padding,
-                                                        marginHorizontal: SIZES.padding,
-                                                        ...styles.shadows
-                                                    }}
-                                                    onPress={() => setReportModalVisible(true)}
-                                                    >
-                                                        <Text style={{
-                                                            color: COLORS.white,
-                                                            ...FONTS.h1,
-                                                            fontSize: 24,
-                                                        }}>
-                                                            Confirm Data
-                                                        </Text>
-                                                    </TouchableOpacity> */}
-                                                    <Text>Date : {date}</Text>
-                                                    <Text>Month : {month}</Text>
-                                                    <Text>Year : {year}</Text>
-                                                    <Text>Height : {height}</Text>
-                                                    <Text>Weight : {weight}</Text>
-                                                    <Text>BMI : {getBMI(parseInt(height), parseInt(weight))}</Text>
-                                                    {/* <Text>Health : {onPressHealthRadioButtons(healthRadioButtonsArray)}</Text> */}
-                                                    <Text>Comment : {comments}</Text>
+                                                    <Text style={{
+                                                        ...FONTS.h2,
+                                                    }}>Date : {date}</Text>
+                                                    <Text style={{
+                                                        ...FONTS.h2,
+                                                    }}>Month : {month}</Text>
+                                                    <Text style={{
+                                                        ...FONTS.h2,
+                                                    }}>Year : {year}</Text>
+                                                    <Text style={{
+                                                        ...FONTS.h2,
+                                                    }}>Height : {height}</Text>
+                                                    <Text style={{
+                                                        ...FONTS.h2,
+                                                    }}>Weight : {weight}</Text>
+                                                    <Text style={{
+                                                        fontSize: 22,
+                                                    }}>BMI : {getBMI(parseInt(height), parseInt(weight))}</Text>
+                                                    <Text style={{
+                                                        ...FONTS.h2,
+                                                    }}>Comment : {comments}</Text>
+                                                    <Text style={{
+                                                        ...FONTS.h2,
+                                                    }}>Health : {healthData.value == 'Good' ? 'Good' : 'Poor'}</Text>
                                                 </View>
                                                 <View style={{
                                                     flexDirection: 'row',
@@ -994,7 +990,7 @@ const BMI = ({ navigation, route }) => {
                                                             ...FONTS.h1,
                                                             fontSize: 24,
                                                         }}>
-                                                            Cancel
+                                                            Edit
                                                         </Text>
                                                     </TouchableOpacity>
                                                     <TouchableOpacity style={{
@@ -1036,7 +1032,7 @@ const BMI = ({ navigation, route }) => {
                                                             ...FONTS.h1,
                                                             fontSize: 24,
                                                         }}>
-                                                            Save
+                                                            Confirm
                                                         </Text>
                                                     </TouchableOpacity>
                         
@@ -1049,7 +1045,7 @@ const BMI = ({ navigation, route }) => {
                         </View>
                     </Modal>
                 </View>
-                
+                {/* Bottom Navigation Buttons */}
                 <View style={{
                     flex: 1,
                     flexDirection: 'row',
@@ -1107,10 +1103,6 @@ const BMI = ({ navigation, route }) => {
         )
     }
 
-    // function renderBottom(){
-    //     return (
-    //     )
-    // }
 
 
     return (
@@ -1121,7 +1113,6 @@ const BMI = ({ navigation, route }) => {
             {renderHeader()}
             <ScrollView>
                 {renderData()}
-                {/* {renderBottom()} */}
             </ScrollView>
         </View>
     )

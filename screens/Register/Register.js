@@ -14,7 +14,7 @@ import {
 } from '../../constants'
 import { styles } from '../../styles'
 
-const Register = ({ navigation, route }) => {
+const Register = ({ navigation }) => {
     
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -35,13 +35,13 @@ const Register = ({ navigation, route }) => {
                 ...styles.shadowy
             }}>
                 <View style={{
-                    // flex: 1,
                     height: 360,
                     backgroundColor: COLORS.white,
                     alignItems: 'cemter',
                     justifyContent: 'center',
                     margin: 10,
                 }}>
+                    {/* Title */}
                     <View style={{
                         paddingHorizontal: SIZES.padding * 2.5,
                         marginTop: -60,
@@ -51,12 +51,12 @@ const Register = ({ navigation, route }) => {
                     }}>
                         <Text style={{
                             ...FONTS.h1,
-                            // fontSize: 24,
                             color: COLORS.black,
                         }}>
                             Registration page
                         </Text>
                     </View>
+                    {/* First Name */}
                     <View style={{
                         flexDirection: 'row',
                         paddingLeft: SIZES.padding * 1.2,
@@ -93,6 +93,7 @@ const Register = ({ navigation, route }) => {
                             }}/>
                         </View>
                     </View>
+                    {/* Last Name */}
                     <View style={{
                         flexDirection: 'row',
                         paddingLeft: SIZES.padding * 1.2,
@@ -129,6 +130,7 @@ const Register = ({ navigation, route }) => {
                             }}/>
                         </View>
                     </View>
+                    {/* DOB Data */}
                     <View style={{
                         flexDirection: 'row',
                         paddingLeft: SIZES.padding * 1.2,
@@ -209,9 +211,11 @@ const Register = ({ navigation, route }) => {
                         </View>
                     </View>
                 </View>
+                {/* Navigation Buttons */}
                 <View style={{
                     flexDirection: 'row',
                 }}>
+                    {/* Navigates to Home Page */}
                     <TouchableOpacity style={{
                         borderRadius: 16,
                         padding: 10,
@@ -234,6 +238,7 @@ const Register = ({ navigation, route }) => {
                             Cancel
                         </Text>
                     </TouchableOpacity>
+                    {/* Navigates to Login Report Page Parsing Data Obtained */}
                     <TouchableOpacity style={{
                         borderRadius: 16,
                         padding: 10,
@@ -275,7 +280,6 @@ const Register = ({ navigation, route }) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginTop: SIZES.padding * 6,
-                // paddingHorizontal: SIZES.padding,
                 backgroundColor: COLORS.lightpurple,
             }}>
                 {renderRegistration()}
