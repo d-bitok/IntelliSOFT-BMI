@@ -115,4 +115,48 @@ Using Atlas to Monitor and general database overview
 
 - HTTP methods (Request, Response ... ) Express.js
 
-### JWT and Refresh Tokens
+# Schema Model Structure and MongoDB Realm Layout JSON
+
+      let IntelliSOFT_BMI_Data = new Schema({
+        first_name: {
+            type: String
+        },
+        last_name: {
+            type: String
+        },
+        dob_date: {
+            type: Number
+        },
+        current_date: {
+            tpye: Number
+        },
+        height: {
+            type: Number
+        },
+        weight: {
+            type: Number
+        },
+        BMI : {
+            type: Number
+        },
+        health: {
+            type: Boolean,
+        },
+        on_diet: {
+            type: Boolean,
+        },
+        on_prescription: {
+            type: Boolean,
+        },
+        comments: {
+            type: String
+        },
+        bmi_status: {
+            type: String
+        },
+        age: {
+            type: Number
+        }
+    }, { timestamps: true });
+![MongoDB_Realm](https://user-images.githubusercontent.com/17353534/135032359-20a4c398-98c2-45d4-b397-72d5d935d9bf.jpg)
+
