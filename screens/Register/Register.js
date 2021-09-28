@@ -224,14 +224,14 @@ const Register = ({ navigation, route }) => {
                         marginBottom: SIZES.padding,
                         ...styles.shadows
                     }}
-                    onPress={() => {}}
+                    onPress={() => {navigation.navigate('Home')}}
                     >
                         <Text style={{
                             color: COLORS.white,
                             ...FONTS.h1,
                             fontSize: 24,
                         }}>
-                            Clear
+                            Cancel
                         </Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={{

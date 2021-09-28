@@ -11,6 +11,10 @@ router.route("/").get((req, res) => {
     });
 });
 
+router.route("/api").get((req, res) => {
+    res.json({message: "Hello There!"});
+})
+
 router.route("/completed").get((req, res) => {
     IntelliSOFT_BMI_Data.find(function(err, dbIntelliSOFT) {
         if (err) {
