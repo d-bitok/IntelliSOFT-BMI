@@ -159,4 +159,5 @@ Using Atlas to Monitor and general database overview
         }
     }, { timestamps: true });
 ![MongoDB_Realm](https://user-images.githubusercontent.com/17353534/135032359-20a4c398-98c2-45d4-b397-72d5d935d9bf.jpg)
+![schema-structure](https://user-images.githubusercontent.com/17353534/135035366-a5704129-9887-4e16-91f2-bfdbd6c48018.jpg)
 
