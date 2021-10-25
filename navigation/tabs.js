@@ -11,7 +11,7 @@ import { isIphoneX } from 'react-native-iphone-x-helper';
 
 import {
     Home,
-    BMI,
+    Register,
     Profile,
 } from '../screens';
 
@@ -50,7 +50,7 @@ export default function Tabs () {
                                 </View>
                             )
 
-                        case 'BMI':
+                        case 'Register':
                             
                             return (
                                 <View>
@@ -91,7 +91,7 @@ export default function Tabs () {
             })}
         >
             <Tab.Screen name='HomePage' component={Home} />
-            <Tab.Screen name='BMI' component={BMI} />
+            <Tab.Screen name='Register' component={Register} />
             <Tab.Screen name='Profile' component={Profile} />
         </Tab.Navigator>
     )
