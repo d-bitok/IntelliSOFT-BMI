@@ -990,7 +990,7 @@ const BMI = ({ navigation, route }) => {
                                                             ...FONTS.h1,
                                                             fontSize: 24,
                                                         }}>
-                                                            Edit
+                                                            Back
                                                         </Text>
                                                     </TouchableOpacity>
                                                     <TouchableOpacity style={{
